@@ -12,7 +12,9 @@ export default function PlayersPage() {
 
       <div className="flex flex-col lg:flex-row gap-8">
         <aside className="lg:w-64">
-          <PlayersFilter />
+          <Suspense fallback={<div>Loading filters...</div>}>
+            <PlayersFilter />
+          </Suspense>
         </aside>
 
         <main className="flex-1">
